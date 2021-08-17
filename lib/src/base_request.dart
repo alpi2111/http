@@ -99,8 +99,8 @@ abstract class BaseRequest {
   BaseRequest(String method, this.url)
       : method = _validateMethod(method),
         headers = LinkedHashMap(
-            equals: (key1, key2) => key1.toLowerCase() == key2.toLowerCase(),
-            hashCode: (key) => key.toLowerCase().hashCode);
+            equals: (key1, key2) => key1 == key2,
+            hashCode: (key) => key.hashCode);
 
   /// Finalizes the HTTP request in preparation for it being sent.
   ///
